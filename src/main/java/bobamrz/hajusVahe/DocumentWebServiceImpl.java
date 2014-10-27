@@ -30,8 +30,7 @@ public class DocumentWebServiceImpl implements DocumentWebService {
 	public DocumentArraySaveResponse save(DocumentArraySaveRequest request) {
 		LOG.debug("web service save invoked");
 		try {
-			throw new RuntimeException("Database is down");
-			//return documentService.saveDocuments(request.getDocumentSaveRequest());
+			return documentService.saveDocuments(request.getDocumentSaveRequest());
 		} catch (CannotCreateTransactionException e) {
 			throw new RuntimeException("Database is down", e);
 		} catch (Exception e) {
