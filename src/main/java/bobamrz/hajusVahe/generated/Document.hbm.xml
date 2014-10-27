@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 06.10.2014 17:11:28 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="bobamrz.hajusVahe.generated.Document" table="document" schema="public">
+        <id name="id" type="int">
+            <column name="id" />
+            <generator class="seqhilo" >
+            	<param name="sequence">document_id_seq</param>
+            </generator>
+        </id>
+        <many-to-one name="catalog" class="bobamrz.hajusVahe.generated.Catalog" fetch="select">
+            <column name="catalog_id" />
+        </many-to-one>
+        <property name="name" type="string">
+            <column name="name" />
+        </property>
+        <property name="desription" type="string">
+            <column name="desription" />
+        </property>
+        <property name="createdDate" type="date">
+            <column name="created_date" length="13" />
+        </property>
+    </class>
+</hibernate-mapping>
